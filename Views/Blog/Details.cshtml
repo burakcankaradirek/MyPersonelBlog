@@ -1,0 +1,118 @@
+@model MyPersonelBlog.Models.BlogPost
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body{
+            margin: 0px;
+            background-color: #e7fafc;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+        }
+        .content img {
+            object-fit: contain;
+            width: 100%;
+        }
+        .content h1 {
+            text-align: center;
+            color: #0696A2;
+        }
+        .content h2 {
+            color: #046D76;
+        }
+        .content p, li {
+            line-height: 1.5;
+            color: #333;
+            text-align: justify;
+        }
+        .comment-section {
+            background-color: #fff;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .comment {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+        }
+        .comment img {
+            width: 10%;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .comment p {
+            margin: 5px 0;
+            text-align: justify;
+        }
+        .comment-form textarea {
+            width: 90%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 100px;
+        }
+        .comment-form button {
+            padding: 10px 20px;
+            background-color: #0696A2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <img src="@Model.ImageUrl" alt="@Model.Title" width="300" height="300">
+        <h1>@Model.Title</h1>
+        <p>@Model.Content</p>
+        <p style="font-weight: bold;">Created by @Model.Author on @Model.CreatedAt.ToString("yyyy-MM-dd")</p>
+    </div>
+
+    <div class="comment-section">
+        <h2>Yorumlar</h2>
+        @foreach (var comment in ViewBag.Comments)
+        {
+            <div class="comment">
+                <div>
+                    <p><strong>@comment.Author:</strong></p>
+                    <p>@comment.Content</p>
+                    <p>@comment.CreatedAt.ToString("yyyy-MM-dd HH:mm")</p>
+                    @if (comment.Author == User.Identity.Name)
+                    {
+                        <form asp-action="DeleteComment" method="post" class="delete-comment-form">
+                            <input type="hidden" name="commentId" value="@comment.Id" />
+                            <button type="submit">Sil</button>
+                        </form>
+                    }
+                </div>
+            </div>
+        }
+        <form asp-action="AddComment" method="post" class="comment-form">
+            <input type="hidden" name="blogPostId" value="@Model.Id" />
+            <textarea name="content" class="form-control" placeholder="Yorumunuzu yazın"></textarea>
+            <button type="submit" class="btn btn-primary">Yorum Yap</button>
+        </form>
+    </div>
+</body>
+</html>

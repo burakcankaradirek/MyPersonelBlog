@@ -1,0 +1,80 @@
+@model MyPersonelBlog.ViewModels.ContactViewModel
+
+@{
+    ViewData["Title"] = "İletişim";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body{
+            margin: 0px;
+            background-color: #e7fafc;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 90%;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+        button:hover {
+            background-color: #1fb4c2;
+        }
+
+        .success-message {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head> 
+<body>
+    <h1>İletişim Formu</h1>
+    @if (ViewBag.Message != null)
+    {
+        <p class="success-message">@ViewBag.Message</p>
+    }
+    <form asp-action="Contact" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <br>
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <br>
+            <label asp-for="Subject" class="control-label"></label>
+            <input asp-for="Subject" class="form-control" />
+            <span asp-validation-for="Subject" class="text-danger"></span>
+            <br>
+            <label asp-for="Message" class="control-label"></label>
+            <textarea asp-for="Message" class="form-control"></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+            <br>        
+        <button type="submit" style="border-radius: 12%;padding: 12px 28px;border: 1px solid #ccc;background-color: #ddd;font-weight: bold;font-size: small;background-color: #0696A2;color: white;display: block;margin: 10px auto;">Gönder</button>
+    </form>
+</body>
+</html>

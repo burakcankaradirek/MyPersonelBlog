@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body{
+            margin: 0px;
+            background-color: #e7fafc;
+        }
+        #main {
+            margin-top: 10px;
+        }
+
+        .layer {
+            background-size: cover;
+            color: rgb(59, 59, 59);
+            height: 300px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .layer p {
+            position: absolute;
+            font-weight: bold;
+            margin-left: 10px;
+            padding: 10px;
+            background-color: #cafaff;
+            border-radius: 10%;
+            text-align: center;
+        }
+
+        .blog, .iletişim, .hakkımda {
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        .bilgi {
+            display: flex;
+        }
+        p{
+            text-align: justify;
+        }
+    </style>
+</head> 
+<body>
+    <div id="main">
+        <div class="layer">
+            <p>Blog Sayfama Hoşgeldiniz</p>
+            <img src="~/images/layer.jpg" width="100%" height="260px">
+
+        </div>
+        <div class="bilgi">
+            <div class="blog">
+                <h2>Blog</h2>
+                <p>Blog sayfam, ilgi duyduğum konular hakkında yazılar paylaşarak bilgi ve düşüncelerimi okuyucularımla paylaştığım harika bir platformdur. Bu yazıları okuyarak, ilgi alanlarınız hakkında derinlemesine bilgi edinebilir ve görüşlerinizi geliştirebilirsiniz. Ayrıca, blog yazılarının altına yorum yaparak katkıda bulunma imkanınız da var. Kayıt olup giriş yaparak, yazıların altına kendi düşüncelerinizi ve deneyimlerinizi paylaşabilir, böylece konuları daha zengin bir tartışma ortamında ele alabiliriz. Sizden gelen geri bildirimler ve katkılar, blogun gelişimine katkıda bulunabilir ve diğer okuyucularla bağlantı kurmamıza yardımcı olabilir.</p>
+                <img src="~/images/blog.jpeg" width="100%" height="260px">
+            </div>
+            <div class="iletişim">
+                <h2>İletişim</h2>
+                <p>İletişim sayfamda bulunan iletişim formu aracılığıyla bana mesajınızı iletmeniz oldukça kolaydır. Formu doldurarak adınızı, soyadınızı, e-posta adresinizi ve iletmek istediğiniz mesajınızı bana iletebilirsiniz. Size en kısa sürede geri dönüş yapacağım. Ayrıca, form dışında diğer iletişim araçlarını kullanarak da doğrudan bana ulaşabilirsiniz. Herhangi bir soru, öneri veya geribildirim için bana ulaşmaktan çekinmeyin. Mümkün olduğunca hızlı ve etkili bir yanıt almanız için buradayım.</p>
+                <img src="~/images/iletisim.jpeg" width="100%" height="260px">
+            </div>
+            <div class="hakkımda">
+                <h2>Hakkımda</h2>
+                <p>Hakkımda sayfamda bulunan bu yazı sayesinde benim hakkımda daha fazla bilgi edinebilirsiniz. Bu bölümde, kim olduğumu, ne tür bir deneyime sahip olduğumu ve ilgi alanlarımı detaylı bir şekilde bulabilirsiniz. Ayrıca, fotoğrafımın altında yer alan bağlantıları kullanarak benimle ilgili daha fazla bilgiye ulaşabilirsiniz. Bu bağlantılar genellikle sosyal medya profillerimi, profesyonel ağlardaki hesaplarımı veya kişisel web sitemi içerebilir. Bu sayede, benimle daha yakından tanışabilir, çalışmalarımı inceleyebilir ve iletişime geçebilirsiniz. Herhangi bir sorunuz, öneriniz veya geri bildiriminiz varsa, lütfen tereddüt etmeden bana ulaşın. Benimle iletişime geçmenizden mutluluk duyarım ve size yardımcı olmaktan memnuniyet duyarım.</p>
+                <img src="~/images/hakkimda.jpeg" width="100%" height="260px">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

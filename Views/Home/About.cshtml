@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Hakkımda";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body{
+            margin: 0px;
+            background-color: #e7fafc;
+        }
+        .kimim{
+            display: flex;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .linkler{
+            margin-left: 20px;
+            list-style-type: none;
+            width: max-content;
+        }
+        .linkler li{
+            padding: 10px;
+        }
+    </style>
+</head> 
+<body>
+    <div class="kimim">
+        <div>
+            <img src="~/images/vesikalik.jpg" alt="Resim Açıklaması" width="300" height="400" style="border: 5px double black; border-radius: 50%; margin: 20px;">
+            <ul class="linkler">
+                <li><i class="fa-brands fa-linkedin" style="color: #0056d6;"></i><a style="color: black;" href="https://www.linkedin.com/in/burak-can-karadirek-75b330aa" target="_blank">LinkedIn</a></li>
+                <li><i class="fa-brands fa-github" style="color: #000000;"></i><a style="color: black;" href="https://www.github.com/burakcankaradirek" target="_blank">GitHub</a></li>
+                <li><i class="fa-solid fa-envelope" style="color: #0078d4;"></i><a style="color: black;" href="#">burakcankaradirek@hotmail.com</a></li>
+            </ul>
+        </div>
+        <div style="margin-right: 20px;">
+            <h2 style="text-align: center;">Ben Kimim?</h2>
+            <p style="text-align: justify;">Ben, Burak Can Karadirek, 01.01.2000 tarihinde İstanbul’da doğmuş biriyim. Eğitim hayatıma Kadir Has Anadolu Lisesi’nde başladım ve buradan mezun olduktan sonra Doğuş Üniversitesi Yazılım Mühendisliği bölümüne giriş yaptım. Şu anda 4. sınıf öğrencisi olarak eğitimime devam etmekteyim. Yapay zeka, makine öğrenmesi ve siber güvenlik gibi geniş bir yelpazede ilgi alanlarına sahibim. Bu alanlarda kendimi sürekli olarak geliştirmek için çeşitli kurslara katılarak ve projeler üreterek çaba harcıyorum.</p>    
+            <p style="text-align: justify;">Mobil ve web uygulamaları geliştirerek kendi gelişimime katkı sağlamaya çalışıyorum. Bu projelerde çalışırken sorumluluk sahibi ve proaktif bir yaklaşım sergiliyorum. Araştırmaya ve öğrenmeye olan merakım beni yeni teknolojileri keşfetmeye ve uygulamaya yönlendiriyor. Kendimi, problem çözme yeteneklerimle ve takım çalışmasına olan katkılarımla tanımlayabilirim.</p>    
+            <p style="text-align: justify;">Gelecekte yurtdışında global şirketlerde insanlara faydalı projelerde çalışmayı hedefliyorum. Bu doğrultuda dil öğreniyorum ve uluslararası deneyimler edinmeye odaklanıyorum. Kariyerim boyunca sürekli olarak gelişmeye ve öğrenmeye devam etmek, hayal ettiğim başarıya ulaşmak için en önemli önceliklerimden biri olacak.</p>    
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+@model MyPersonelBlog.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Giriş Yap";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0px;
+            background-color: #e7fafc;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 20%;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px 28px;
+            border: 1px solid #ccc;
+            background-color: #ddd;
+            font-weight: bold;
+            font-size: small;
+            background-color: #0696A2;
+            color: white;
+            display: block;
+            margin: 10px auto;
+        }
+
+        button:hover {
+            background-color: #1fb4c2;
+        }
+        .text-danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <h1>Giriş Yap</h1>
+        <form asp-action="Login" method="post">
+            <p>Blog oluşturmak ve yorum yapmak için giriş yapınız.</p>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label asp-for="UserName" class="control-label"></label>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+            <br>
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control" type="password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <br>
+            <p>Bir hesabınız yok mu? <a asp-controller="Account" asp-action="Register" style="color: #1fb4c2;">Kayıt Ol</a></p>
+            <button type="submit" style="border-radius: 12%;">Giriş Yap</button>
+        </form>
+    </div>
+</body>
+</html>

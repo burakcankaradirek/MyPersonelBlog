@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - MyPersonelBlog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0px;
+            background-color: #e7fafc;
+        }
+        .menu {
+            list-style-type: none;
+            background-color: #0696A2;
+            width: 100%;
+            padding-left: 0px;
+            margin: auto;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .menu li {
+            padding: 10px;
+            display: inline-block;
+            padding-right: 50px;
+        }
+        .menu li:hover {
+            background-color: #1fb4c2;
+            transition: 2s;
+        }
+        .logout-form {
+            display: inline;
+        }
+        .logout-button {
+            background: none;
+            border: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><i class="fa-solid fa-house" style="color: #ffffff;"></i><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+        <li><i class="fa-solid fa-address-card" style="color: #ffffff;"></i><a asp-controller="Home" asp-action="About">Hakkımda</a></li>
+        <li><i class="fa-solid fa-newspaper" style="color: #ffffff;"></i><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+        <li><i class="fa-solid fa-address-book" style="color: #ffffff;"></i><a asp-controller="Home" asp-action="Contact">İletişim</a></li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li style="float: right;">
+                <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+                <form asp-controller="Account" asp-action="Logout" method="post" class="logout-form">
+                    <button type="submit" class="logout-button">Çıkış Yap</button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li style="float: right;"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i><a asp-controller="Account" asp-action="Login">Giriş Yap</a></li>
+        }
+    </ul>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>
